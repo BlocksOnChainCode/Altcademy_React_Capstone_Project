@@ -1,17 +1,25 @@
+import { useEffect } from "react";
 import "./Finance_ExchangeRates.scss";
+import BaseCurrency from "./Finance_BaseCurrency";
 
-const ExchangePair = () => {
+const ExchangePair = ({ exchangeRates, setExchangeRates, baseCurrency }) => {
   return (
-    <tr>
-      <td>EUR</td>
-      <td>0.5%</td>
-      <td>1.5%</td>
-      <td>1.0000</td>
-    </tr>
+    <tbody>
+      {Object.keys(exchangeRates).map((key) => (
+        <tr key={key}>
+          <td>
+            {baseCurrency}/{key}
+          </td>
+          <td>0.00%</td>
+          <td>0.00%</td>
+          <td>{exchangeRates[key]}</td>
+        </tr>
+      ))}
+    </tbody>
   );
 };
 
-const ExchangeRates = () => {
+const ExchangeRates = ({ exchangeRates, setExchangeRates, baseCurrency }) => {
   return (
     <div id="ExchangeRates">
       <h2>Exchange Rates</h2>
@@ -24,17 +32,10 @@ const ExchangeRates = () => {
             <th>Rate</th>
           </tr>
         </thead>
-        <tbody>
-          {/* Here needs to be mapped a custom component containing the table rows */}
-          <ExchangePair />
-          <ExchangePair />
-          <ExchangePair />
-          <ExchangePair />
-          <ExchangePair />
-          <ExchangePair />
-          <ExchangePair />
-          <ExchangePair />
-        </tbody>
+        <ExchangePair
+          exchangeRates={exchangeRates}
+          baseCurrency={baseCurrency}
+        />
       </table>
     </div>
   );
