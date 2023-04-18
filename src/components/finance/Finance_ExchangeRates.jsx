@@ -1,16 +1,28 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./Finance_ExchangeRates.scss";
-import BaseCurrency from "./Finance_BaseCurrency";
 import { Link } from "react-router-dom";
 
-const ExchangePair = ({ exchangeRates, setExchangeRates, baseCurrency }) => {
+const ExchangePair = (props) => {
+  const { state, setState } = props;
+
+  const handleQuoteCurrencyChange = (key) => {
+    setState({
+      ...state,
+      quoteCurrency: key,
+    });
+  };
+
   return (
     <div id="exchangePairs">
-      {Object.keys(exchangeRates).map((key) => (
+      {Object.keys(state.exchangeRates).map((key) => (
         <Link key={key} to={`/finance/chart`}>
-          <div className="pair" key={key}>
+          <div
+            className="pair"
+            key={key}
+            onClick={() => handleQuoteCurrencyChange(key)}
+          >
             <p>
-              {baseCurrency}/{key} 00% 00% {exchangeRates[key]}
+              {state.baseCurrency}/<span>{key}</span> {state.exchangeRates[key]}
             </p>
           </div>
         </Link>
@@ -19,12 +31,13 @@ const ExchangePair = ({ exchangeRates, setExchangeRates, baseCurrency }) => {
   );
 };
 
-const ExchangeRates = ({ exchangeRates, setExchangeRates, baseCurrency }) => {
+const ExchangeRates = (props) => {
+  const { state, setState } = props;
   return (
     <div id="ExchangeRates">
       <h2>Exchange Rates</h2>
 
-      <ExchangePair exchangeRates={exchangeRates} baseCurrency={baseCurrency} />
+      <ExchangePair state={state} setState={setState} />
     </div>
   );
 };

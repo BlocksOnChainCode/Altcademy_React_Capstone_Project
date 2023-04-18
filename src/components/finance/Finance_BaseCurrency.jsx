@@ -1,13 +1,22 @@
 import "./Finance_BaseCurrency.scss";
 
-const BaseCurrency = ({ baseCurrency, setBaseCurrency }) => {
+const BaseCurrency = (props) => {
+  const { state, setState } = props;
+
   const handleChange = (e) => {
-    setBaseCurrency(e.target.value);
+    setState({
+      ...state,
+      baseCurrency: e.target.value,
+    });
   };
 
   return (
     <section id="BaseCurrency">
-      <select id="base-currency" value={baseCurrency} onChange={handleChange}>
+      <select
+        id="base-currency"
+        value={state.baseCurrency}
+        onChange={handleChange}
+      >
         <option value="AUD">AUD - Australian Dollar</option>
         <option value="BGN">BGN - Bulgarian Lev</option>
         <option value="BRL">BRL - Brazilian Real</option>
