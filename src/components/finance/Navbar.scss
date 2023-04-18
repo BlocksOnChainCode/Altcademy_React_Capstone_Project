@@ -1,0 +1,5 @@
+@import "/src/main.scss";
+
+#Navbar {
+  @include flex(row, space-around, center);
+}
