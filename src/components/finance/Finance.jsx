@@ -1,14 +1,12 @@
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
+import BaseCurrency from "./Finance_BaseCurrency";
 
 const Finance = () => {
   return (
     <div id="Finance">
       <Navbar />
-      <h1>Finance</h1>
-      <Link to={"/"}>
-        <button>Home</button>
-      </Link>
+      <BaseCurrency />
     </div>
   );
 };
