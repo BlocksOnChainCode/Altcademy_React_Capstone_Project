@@ -1,5 +1,11 @@
 @import "/src/main.scss";
 
 #Navbar {
-  @include flex(row, space-around, center);
+  @include flex(column, space-around, center);
+  width: 100vw;
+
+  nav {
+    @include flex(row, space-around, center);
+    width: 100%;
+  }
 }
