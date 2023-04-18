@@ -1,21 +1,21 @@
 import { useEffect } from "react";
 import "./Finance_ExchangeRates.scss";
 import BaseCurrency from "./Finance_BaseCurrency";
+import { Link } from "react-router-dom";
 
 const ExchangePair = ({ exchangeRates, setExchangeRates, baseCurrency }) => {
   return (
-    <tbody>
+    <div id="exchangePairs">
       {Object.keys(exchangeRates).map((key) => (
-        <tr key={key}>
-          <td>
-            {baseCurrency}/{key}
-          </td>
-          <td>0.00%</td>
-          <td>0.00%</td>
-          <td>{exchangeRates[key]}</td>
-        </tr>
+        <Link key={key} to={`/finance/chart`}>
+          <div className="pair" key={key}>
+            <p>
+              {baseCurrency}/{key} 00% 00% {exchangeRates[key]}
+            </p>
+          </div>
+        </Link>
       ))}
-    </tbody>
+    </div>
   );
 };
 
@@ -23,20 +23,8 @@ const ExchangeRates = ({ exchangeRates, setExchangeRates, baseCurrency }) => {
   return (
     <div id="ExchangeRates">
       <h2>Exchange Rates</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Currency</th>
-            <th>24h</th>
-            <th>7d</th>
-            <th>Rate</th>
-          </tr>
-        </thead>
-        <ExchangePair
-          exchangeRates={exchangeRates}
-          baseCurrency={baseCurrency}
-        />
-      </table>
+
+      <ExchangePair exchangeRates={exchangeRates} baseCurrency={baseCurrency} />
     </div>
   );
 };

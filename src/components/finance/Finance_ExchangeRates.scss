@@ -1,27 +1,11 @@
+@import "/src/main.scss";
+
 #ExchangeRates {
-  background-color: aqua;
-  text-align: center;
-  table {
+  width: 100%;
+  @include flex(column, flex-start, center);
+
+  .pair {
     width: 100%;
-    border-collapse: collapse;
-    border-spacing: 0;
-    border: 1px solid #ddd;
-    thead {
-      tr {
-        th {
-          text-align: left;
-          padding: 8px;
-          border-bottom: 1px solid #ddd;
-        }
-      }
-    }
-    tbody {
-      tr {
-        td {
-          padding: 8px;
-          border-bottom: 1px solid #ddd;
-        }
-      }
-    }
+    @include flex(row, space-between, center);
   }
 }
