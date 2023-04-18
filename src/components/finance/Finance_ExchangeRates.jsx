@@ -1,5 +1,16 @@
 import "./Finance_ExchangeRates.scss";
 
+const ExchangePair = () => {
+  return (
+    <tr>
+      <td>EUR</td>
+      <td>0.5%</td>
+      <td>1.5%</td>
+      <td>1.0000</td>
+    </tr>
+  );
+};
+
 const ExchangeRates = () => {
   return (
     <div id="ExchangeRates">
@@ -15,6 +26,14 @@ const ExchangeRates = () => {
         </thead>
         <tbody>
           {/* Here needs to be mapped a custom component containing the table rows */}
+          <ExchangePair />
+          <ExchangePair />
+          <ExchangePair />
+          <ExchangePair />
+          <ExchangePair />
+          <ExchangePair />
+          <ExchangePair />
+          <ExchangePair />
         </tbody>
       </table>
     </div>

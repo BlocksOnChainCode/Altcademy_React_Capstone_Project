@@ -4,15 +4,20 @@ import "./Navbar.scss";
 const Navbar = () => {
   return (
     <div id="Navbar">
-      <h1>Altcademy</h1>
-      <nav>
+      <div className="NavBarHeader">
+        <h1>Altcademy</h1>
         <Link to={"/"}>
-          <h2>Home</h2>
+          <button>Home</button>
         </Link>
-        <Link to={"/portfolio"}>
+      </div>
+      <nav>
+        <Link to={"/finance"}>
+          <h2>forex</h2>
+        </Link>
+        <Link to={"/finance/portfolio"}>
           <h2>Portfolio</h2>
         </Link>
-        <Link to={"/crypto"}>
+        <Link to={"/finance/crypto"}>
           <h2>Crypto</h2>
         </Link>
       </nav>
