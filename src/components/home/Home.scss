@@ -1,0 +1,10 @@
+@import "/src/main.scss";
+
+#Home {
+  @include flex(column, space-around, center);
+  height: 100vh;
+  width: 100vw;
+  #Home_header {
+    @include flex(column, flex-start, center);
+  }
+}
