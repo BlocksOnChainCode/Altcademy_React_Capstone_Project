@@ -1,0 +1,24 @@
+@import "/src/main.scss";
+
+#Navbar {
+  @include flex(column, space-around, center);
+  width: 100vw;
+
+  .NavBarHeader {
+    @include flex(row, center, center);
+    width: 100%;
+    height: 50px;
+    h1 {
+      margin-right: auto;
+      padding: 1rem;
+    }
+    button {
+      margin: 1rem;
+    }
+  }
+
+  nav {
+    @include flex(row, space-around, center);
+    width: 100%;
+  }
+}

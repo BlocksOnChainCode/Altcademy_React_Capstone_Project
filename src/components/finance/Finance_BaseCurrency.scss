@@ -1,0 +1,5 @@
+@import "/src/main.scss";
+
+#BaseCurrency {
+  @include flex(row, center, center);
+}

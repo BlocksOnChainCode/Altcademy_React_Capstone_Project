@@ -1,0 +1,11 @@
+@import "/src/main.scss";
+
+#ExchangeRates {
+  width: 100%;
+  @include flex(column, flex-start, center);
+
+  .pair {
+    width: 100%;
+    @include flex(row, space-between, center);
+  }
+}
