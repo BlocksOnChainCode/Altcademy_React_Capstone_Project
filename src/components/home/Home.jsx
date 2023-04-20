@@ -2,23 +2,6 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import "./Home.scss";
 
-const homeVariants = {
-  hidden: {
-    opacity: 0,
-    x: -400,
-  },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 1,
-      type: "spring",
-      stiffness: 100,
-      delay: 0.5,
-    },
-  },
-};
-
 const Home_Header = () => {
   return (
     <motion.div

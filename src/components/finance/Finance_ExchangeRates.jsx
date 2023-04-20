@@ -2,6 +2,42 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import "./Finance_ExchangeRates.scss";
 import { Link } from "react-router-dom";
+import Navbar from "./Finance_Navbar";
+import BaseCurrency from "./Finance_BaseCurrency";
+
+const ExchangeChart = (props) => {
+  const { state, setState } = props;
+
+  const handleChartChange = (key) => {
+    setState({
+      ...state,
+      chart: key,
+    });
+  };
+
+  const handleClick = () => {
+    setState({
+      ...state,
+      pairDetails: false,
+    });
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: -400 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 1, type: "spring", stiffness: 50 }}
+      id="exchangeChart"
+    >
+      <div className="chart" onClick={() => handleChartChange("line")}>
+        <h3>Line</h3>
+      </div>
+      <Link to="/finance">
+        <button onClick={handleClick}>Back</button>
+      </Link>
+    </motion.div>
+  );
+};
 
 const ExchangePair = (props) => {
   const { state, setState } = props;
@@ -21,6 +57,8 @@ const ExchangePair = (props) => {
       transition={{ duration: 1, type: "spring", stiffness: 50 }}
       id="exchangePairs"
     >
+      <Navbar />
+      <BaseCurrency state={state} setState={setState} />
       {Object.keys(state.exchangeRates).map((key) => (
         <div
           className="pair"
@@ -39,9 +77,19 @@ const ExchangePair = (props) => {
 
 const ExchangeRates = (props) => {
   const { state, setState } = props;
+
+  let conditionalRender = null;
+
+  if (state.pairDetails) {
+    conditionalRender = <ExchangeChart state={state} setState={setState} />;
+  } else {
+    conditionalRender = <ExchangePair state={state} setState={setState} />;
+  }
+
   return (
     <div id="ExchangeRates">
-      <ExchangePair state={state} setState={setState} />
+      {conditionalRender}
+      {/* <ExchangePair state={state} setState={setState} /> */}
     </div>
   );
 };
