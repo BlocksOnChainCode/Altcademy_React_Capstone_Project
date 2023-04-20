@@ -6,6 +6,17 @@
   align-items: $align;
 }
 
+@mixin button() {
+  background-color: transparent;
+  font-size: 1rem;
+  padding: 0.5rem;
+  margin: 1rem;
+  color: lightblue;
+  border: 2px solid lightblue;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 5px #ffffff;
+}
+
 //? Gradient Mixin
 $start-color: #2d2d2d;
 $end-color: #000000;
@@ -21,4 +32,14 @@ html {
     margin: 0;
     padding: 0;
   }
+}
+
+h1 {
+  font-size: 3rem;
+  color: lightblue;
+  margin: 1rem;
+}
+
+h2 {
+  font-size: 1.5rem;
 }

@@ -24,7 +24,7 @@ const ExchangeChart = (props) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, x: -400 }}
+      initial={{ opacity: 0, x: -800 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 1, type: "spring", stiffness: 50 }}
       id="exchangeChart"
@@ -55,7 +55,7 @@ const ExchangePair = (props) => {
       <Navbar />
       <BaseCurrency state={state} setState={setState} />
       <motion.div
-        initial={{ opacity: 0, x: -400 }}
+        initial={{ opacity: 0, x: -800 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1, type: "spring", stiffness: 50 }}
         id="exchangePairs"

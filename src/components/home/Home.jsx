@@ -25,19 +25,39 @@ const Home_Projects = () => {
       transition={{ duration: 1, type: "spring", stiffness: 50 }}
     >
       <Link to="/finance">
-        <button>Finance</button>
+        <motion.button
+          whileHover={{ scale: 1.1, transition: { duration: 0.5 } }}
+        >
+          Finance
+        </motion.button>
       </Link>
-      <Link to="/?????">
-        <button>Project 2</button>
+      <Link to="/project2">
+        <motion.button
+          whileHover={{ scale: 1.1, transition: { duration: 0.5 } }}
+        >
+          Project 2
+        </motion.button>
       </Link>
-      <Link to="/?????">
-        <button>Project 3</button>
+      <Link to="/project3">
+        <motion.button
+          whileHover={{ scale: 1.1, transition: { duration: 0.5 } }}
+        >
+          Project 3
+        </motion.button>
       </Link>
-      <Link to="/?????">
-        <button>Project 4</button>
+      <Link to="/project4">
+        <motion.button
+          whileHover={{ scale: 1.1, transition: { duration: 0.5 } }}
+        >
+          Project 4
+        </motion.button>
       </Link>
-      <Link to="/?????">
-        <button>Project 5...</button>
+      <Link to="/project5">
+        <motion.button
+          whileHover={{ scale: 1.1, transition: { duration: 0.5 } }}
+        >
+          Project 5...
+        </motion.button>
       </Link>
     </motion.div>
   );
