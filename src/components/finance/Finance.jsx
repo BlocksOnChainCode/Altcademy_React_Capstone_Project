@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getRates } from "./Finance_API";
-import Navbar from "./Navbar";
-import BaseCurrency from "./Finance_BaseCurrency";
 import ExchangeRates from "./Finance_ExchangeRates";
 import "./Finance.scss";
 
@@ -15,11 +13,7 @@ const Finance = (props) => {
 
   return (
     <div id="Finance">
-      <Navbar />
-      <BaseCurrency state={state} setState={setState} />
       <ExchangeRates state={state} setState={setState} />
-
-      <button onClick={getRates}>log rates</button>
     </div>
   );
 };

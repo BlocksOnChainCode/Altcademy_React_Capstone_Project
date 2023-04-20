@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import "./Navbar.scss";
+import "./Finance_Navbar.scss";
 
-const Navbar = () => {
+const Finance_Navbar = () => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -31,4 +31,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Finance_Navbar;

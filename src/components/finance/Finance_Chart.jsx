@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Charts from "chart.js/auto";
-import Navbar from "./Navbar";
+import Navbar from "./Finance_Navbar";
 import { getDateRange } from "./utils";
 
 const Pair = (props) => {
