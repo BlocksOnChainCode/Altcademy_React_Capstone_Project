@@ -3,22 +3,50 @@
 #Navbar {
   @include flex(column, space-around, center);
   width: 100vw;
-
+  border-bottom: 1px solid lightblue;
+  padding-bottom: 1rem;
   .NavBarHeader {
     @include flex(row, center, center);
     width: 100%;
     height: 50px;
+    border-bottom: 1px solid lightblue;
+    padding: 1rem;
     h1 {
+      color: lightblue;
+      font-size: 2.5rem;
       margin-right: auto;
       padding: 1rem;
     }
     button {
+      background-color: transparent;
+      font-size: 1rem;
+      padding: 0.25rem;
       margin: 1rem;
+      width: 70px;
+      height: 40px;
+      color: lightblue;
+      border: 2px solid lightblue;
+      border-radius: 0.5rem;
+      box-shadow: 0 0 10px #ffffff;
     }
   }
 
   nav {
     @include flex(row, space-around, center);
     width: 100%;
+    height: 50px;
+    button {
+      background-color: transparent;
+      font-size: 1rem;
+      padding: 0.25rem;
+      margin-bottom: 1rem;
+      margin-top: 2rem;
+      width: 80px;
+      height: 40px;
+      color: lightblue;
+      border: 2px solid lightblue;
+      border-radius: 0.5rem;
+      box-shadow: 0 0 10px #ffffff;
+    }
   }
 }

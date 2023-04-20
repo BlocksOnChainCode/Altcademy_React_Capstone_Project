@@ -12,13 +12,13 @@ const Navbar = () => {
       </div>
       <nav>
         <Link to={"/finance"}>
-          <h2>forex</h2>
+          <button>forex</button>
         </Link>
         <Link to={"/finance/portfolio"}>
-          <h2>Portfolio</h2>
+          <button>Portfolio</button>
         </Link>
         <Link to={"/finance/crypto"}>
-          <h2>Crypto</h2>
+          <button>Crypto</button>
         </Link>
       </nav>
     </div>
