@@ -7,7 +7,7 @@
   padding-bottom: 1rem;
   .NavBarHeader {
     @include flex(row, center, center);
-    width: 100%;
+    width: 90%;
     height: 50px;
     padding: 1rem;
     h1 {

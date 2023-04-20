@@ -5,7 +5,12 @@ import ExchangeRates from "./Finance_ExchangeRates";
 import "./Finance.scss";
 
 const Finance = (props) => {
-  const { state, setState } = props;
+  const [state, setState] = useState({
+    baseCurrency: "EUR",
+    quoteCurrency: "USD",
+    exchangeRates: [],
+    pairDetails: false,
+  });
 
   useEffect(() => {
     getRates(state, setState);
