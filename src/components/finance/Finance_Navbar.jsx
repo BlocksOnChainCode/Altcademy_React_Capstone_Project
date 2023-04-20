@@ -18,7 +18,7 @@ const Finance_Navbar = () => {
       </div>
       <nav>
         <Link to={"/finance"}>
-          <button>forex</button>
+          <button>Forex</button>
         </Link>
         <Link to={"/finance/portfolio"}>
           <button>Portfolio</button>

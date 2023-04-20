@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { getRates } from "./Finance_API";
-import ExchangeRates from "./Finance_ExchangeRates";
-import "./Finance.scss";
+import { getHistoricalRates, getRates } from "./api";
+import Forex from "./Finance_Forex";
+import "./Finance_Forex.scss";
 
 const Finance = (props) => {
   const [state, setState] = useState({
@@ -12,15 +12,22 @@ const Finance = (props) => {
     pairDetails: false,
   });
 
+  // ! This is the only place where we call the API
   useEffect(() => {
     getRates(state, setState);
-  }, [state.baseCurrency]);
+    // getHistoricalRates(state, setState, 365);
+  }, [state.baseCurrency, state.quoteCurrency]);
 
   return (
     <div id="Finance">
-      <ExchangeRates state={state} setState={setState} />
+      <Forex state={state} setState={setState} />
     </div>
   );
 };
 
 export default Finance;
+
+/**
+ * todo - Place everything to do with API calls in a separate file
+ * todo - Add states for historical data in initial call, including rate of 7 days ago and 30 days ago
+ */

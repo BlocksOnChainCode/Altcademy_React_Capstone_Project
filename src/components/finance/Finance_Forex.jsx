@@ -1,19 +1,13 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import "./Finance_ExchangeRates.scss";
+import "./Finance_Forex.scss";
 import { Link } from "react-router-dom";
 import Navbar from "./Finance_Navbar";
 import BaseCurrency from "./Finance_BaseCurrency";
+import { getRates, getHistoricalRates } from "./api";
 
 const ExchangeChart = (props) => {
   const { state, setState } = props;
-
-  const handleChartChange = (key) => {
-    setState({
-      ...state,
-      chart: key,
-    });
-  };
 
   const handleClick = () => {
     setState({
@@ -22,6 +16,7 @@ const ExchangeChart = (props) => {
     });
   };
 
+  console.log(state);
   return (
     <motion.div
       initial={{ opacity: 0, x: -800 }}
@@ -77,7 +72,7 @@ const ExchangePair = (props) => {
   );
 };
 
-const ExchangeRates = (props) => {
+const Finance_Forex = (props) => {
   const { state, setState } = props;
 
   let conditionalRender = null;
@@ -88,15 +83,10 @@ const ExchangeRates = (props) => {
     conditionalRender = <ExchangePair state={state} setState={setState} />;
   }
 
-  return (
-    <div id="ExchangeRates">
-      {conditionalRender}
-      {/* <ExchangePair state={state} setState={setState} /> */}
-    </div>
-  );
+  return <div id="ExchangeRates">{conditionalRender}</div>;
 };
 
-export default ExchangeRates;
+export default Finance_Forex;
 
 //todo: add a custom component for the table rows
 // ?: this will need access to the baseCurrency state from Finance.jsx
