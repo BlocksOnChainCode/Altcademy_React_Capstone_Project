@@ -4,13 +4,10 @@ import { getRates } from "./Finance_API";
 import Navbar from "./Navbar";
 import BaseCurrency from "./Finance_BaseCurrency";
 import ExchangeRates from "./Finance_ExchangeRates";
+import "./Finance.scss";
 
 const Finance = (props) => {
   const { state, setState } = props;
-
-  // const [baseCurrency, setBaseCurrency] = useState("EUR");
-  // const [quoteCurrency, setQuoteCurrency] = useState("USD");
-  // const [exchangeRates, setExchangeRates] = useState([]);
 
   useEffect(() => {
     getRates(state, setState);

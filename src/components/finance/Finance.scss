@@ -1,0 +1,10 @@
+$start-color: #2d2d2d;
+$end-color: #000000;
+@mixin radial-gradient-dark($start-color, $end-color) {
+  background: $start-color;
+  background: radial-gradient(circle, $start-color, $end-color);
+}
+
+#Finance {
+  @include radial-gradient-dark($start-color, $end-color);
+}
