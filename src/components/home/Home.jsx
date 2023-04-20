@@ -25,7 +25,7 @@ const Home_Header = () => {
       id="Home_Header"
       initial={{ opacity: 0, x: 800 }}
       animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 1, type: "spring", stiffness: 100, delay: 0.5 }}
+      transition={{ duration: 1, type: "spring", stiffness: 50 }}
     >
       <h1>Altcademy</h1>
       <h2>React Capstone Project</h2>
@@ -39,7 +39,7 @@ const Home_Projects = () => {
       id="Home_Projects"
       initial={{ opacity: 0, x: 800 }}
       animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 1, type: "spring", stiffness: 100, delay: 0.5 }}
+      transition={{ duration: 1, type: "spring", stiffness: 50 }}
     >
       <Link to="/finance">
         <button>Finance</button>

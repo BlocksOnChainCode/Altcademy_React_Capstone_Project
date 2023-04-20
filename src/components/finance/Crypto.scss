@@ -1,3 +1,6 @@
+@import "/src/main.scss";
+
 #Crypto {
-  background-color: aqua;
+  @include radial-gradient-dark($start-color, $end-color);
+  height: 100vh;
 }

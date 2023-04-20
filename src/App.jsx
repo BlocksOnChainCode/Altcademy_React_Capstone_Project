@@ -11,6 +11,7 @@ function App() {
     baseCurrency: "EUR",
     quoteCurrency: "USD",
     exchangeRates: [],
+    pairDetails: false,
   });
 
   return (

@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import "./Finance_BaseCurrency.scss";
 
 const BaseCurrency = (props) => {
@@ -11,7 +12,12 @@ const BaseCurrency = (props) => {
   };
 
   return (
-    <section id="BaseCurrency">
+    <motion.section
+      initial={{ opacity: 0, x: -400 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 1, type: "spring", stiffness: 50 }}
+      id="BaseCurrency"
+    >
       <select
         id="base-currency"
         value={state.baseCurrency}
@@ -49,7 +55,7 @@ const BaseCurrency = (props) => {
         <option value="USD">USD - United States Dollar</option>
         <option value="ZAR">ZAR - South African Rand</option>
       </select>
-    </section>
+    </motion.section>
   );
 };
 
