@@ -2,8 +2,8 @@
 
 #Navbar {
   @include flex(column, space-around, center);
-  width: 100vw;
-  border-bottom: 1px solid lightblue;
+  width: 100%;
+  /*   border-bottom: 1px solid lightblue; */
   padding-bottom: 1rem;
   .NavBarHeader {
     @include flex(row, center, center);

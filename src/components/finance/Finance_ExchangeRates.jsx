@@ -51,27 +51,29 @@ const ExchangePair = (props) => {
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, x: -400 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 1, type: "spring", stiffness: 50 }}
-      id="exchangePairs"
-    >
+    <div>
       <Navbar />
       <BaseCurrency state={state} setState={setState} />
-      {Object.keys(state.exchangeRates).map((key) => (
-        <div
-          className="pair"
-          key={key}
-          onClick={() => handleQuoteCurrencyChange(key)}
-        >
-          <h3>
-            {state.baseCurrency} / {key}
-          </h3>
-          <h3>{state.exchangeRates[key]}</h3>
-        </div>
-      ))}
-    </motion.div>
+      <motion.div
+        initial={{ opacity: 0, x: -400 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1, type: "spring", stiffness: 50 }}
+        id="exchangePairs"
+      >
+        {Object.keys(state.exchangeRates).map((key) => (
+          <div
+            className="pair"
+            key={key}
+            onClick={() => handleQuoteCurrencyChange(key)}
+          >
+            <h3>
+              {state.baseCurrency} / {key}
+            </h3>
+            <h3>{state.exchangeRates[key]}</h3>
+          </div>
+        ))}
+      </motion.div>
+    </div>
   );
 };
 
