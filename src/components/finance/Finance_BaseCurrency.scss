@@ -2,4 +2,16 @@
 
 #BaseCurrency {
   @include flex(row, center, center);
+  width: 100%;
+  select {
+    width: 80%;
+    height: 40px;
+    font-size: 1rem;
+    padding: 0.25rem;
+    margin: 1rem;
+    color: lightblue;
+    border: 2px solid lightblue;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px #ffffff;
+  }
 }

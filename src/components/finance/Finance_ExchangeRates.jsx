@@ -15,17 +15,16 @@ const ExchangePair = (props) => {
   return (
     <div id="exchangePairs">
       {Object.keys(state.exchangeRates).map((key) => (
-        <Link key={key} to={`/finance/chart`}>
-          <div
-            className="pair"
-            key={key}
-            onClick={() => handleQuoteCurrencyChange(key)}
-          >
-            <p>
-              {state.baseCurrency}/<span>{key}</span> {state.exchangeRates[key]}
-            </p>
-          </div>
-        </Link>
+        <div
+          className="pair"
+          key={key}
+          onClick={() => handleQuoteCurrencyChange(key)}
+        >
+          <h3>
+            {state.baseCurrency} / {key}
+          </h3>
+          <h3>{state.exchangeRates[key]}</h3>
+        </div>
       ))}
     </div>
   );
