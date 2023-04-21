@@ -15,7 +15,6 @@ const Finance = (props) => {
   // ! This is the only place where we call the API
   useEffect(() => {
     getRates(state, setState);
-    // getHistoricalRates(state, setState, 365);
   }, [state.baseCurrency, state.quoteCurrency]);
 
   return (
@@ -28,6 +27,6 @@ const Finance = (props) => {
 export default Finance;
 
 /**
- * todo - Place everything to do with API calls in a separate file
+ * Place everything to do with API calls in a separate file (DONE)
  * todo - Add states for historical data in initial call, including rate of 7 days ago and 30 days ago
  */
