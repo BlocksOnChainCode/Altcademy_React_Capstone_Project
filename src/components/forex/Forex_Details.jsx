@@ -27,10 +27,22 @@ const LineChart = () => {
   );
 };
 
-const Converter = () => {
+const Converter = ({ state }) => {
+  const [amount, setAmount] = useState(1);
+
   return (
     <div>
       <h1>Converter</h1>
+      <form>
+        <input
+          type="number"
+          value={amount}
+          onChange={(e) => setAmount(e.target.value)}
+        />
+        <input type="text" value={state.baseCurrency} readOnly />
+        <input type="text" value={state.quoteCurrency} readOnly />
+        <input type="number" value={amount * state.pairRate} readOnly />
+      </form>
     </div>
   );
 };
@@ -43,7 +55,7 @@ const Details = (props) => {
       <Navbar />
       <PairDetails state={state} />
       <LineChart />
-      <Converter />
+      <Converter state={state} />
       <button onClick={() => setState({ ...state, pairDetails: false })}>
         Back
       </button>

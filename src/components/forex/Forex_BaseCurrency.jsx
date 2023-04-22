@@ -60,3 +60,5 @@ const BaseCurrency = (props) => {
 };
 
 export default BaseCurrency;
+
+// todo : refactor SCSS ID's and classes to be more specific. Change filename to Forex_Pairs_BaseCurrency.jsx

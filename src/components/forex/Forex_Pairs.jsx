@@ -44,3 +44,5 @@ const Pairs = (props) => {
 };
 
 export default Pairs;
+
+// todo: refactor SCSS ID's and classes to be more specific.
