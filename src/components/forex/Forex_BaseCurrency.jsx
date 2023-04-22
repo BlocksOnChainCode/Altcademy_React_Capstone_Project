@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import "./Finance_BaseCurrency.scss";
+import "./Forex_BaseCurrency.scss";
 
 const BaseCurrency = (props) => {
   const { state, setState } = props;

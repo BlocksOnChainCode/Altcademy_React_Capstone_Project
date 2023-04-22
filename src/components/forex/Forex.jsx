@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import "./Finance_Forex.scss";
-import { Link } from "react-router-dom";
+import "./Forex.scss";
 import Navbar from "../Navbar";
-import BaseCurrency from "./Finance_BaseCurrency";
+import BaseCurrency from "./Forex_BaseCurrency";
 import { getRates, getHistoricalRates } from "./api";
 
 const LineChart = (props) => {

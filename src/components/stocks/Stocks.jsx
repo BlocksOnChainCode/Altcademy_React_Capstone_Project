@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import Navbar from "../Navbar";
-import "./Portfolio.scss";
+import "./Stocks.scss";
 
-const Portfolio = () => {
+const Stocks = () => {
   return (
-    <div id="Portfolio">
+    <div id="Stocks">
       <Navbar />
       <h1>Portfolio</h1>
       <Link to={"/"}>
@@ -14,4 +14,4 @@ const Portfolio = () => {
   );
 };
 
-export default Portfolio;
+export default Stocks;

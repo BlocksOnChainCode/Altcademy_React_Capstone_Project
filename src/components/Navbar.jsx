@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import "./Finance_Navbar.scss";
+import "./Navbar.scss";
 
-const Finance_Navbar = () => {
+const Navbar = () => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -10,7 +10,7 @@ const Finance_Navbar = () => {
       transition={{ duration: 1, type: "spring", stiffness: 50 }}
       id="Navbar"
     >
-      <div className="NavBarHeader">
+      <div className="Header">
         <h1>Altcademy</h1>
         <Link to={"/"}>
           <button>Home</button>
@@ -20,4 +20,4 @@ const Finance_Navbar = () => {
   );
 };
 
-export default Finance_Navbar;
+export default Navbar;
