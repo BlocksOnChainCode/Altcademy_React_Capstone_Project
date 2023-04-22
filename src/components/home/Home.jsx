@@ -31,14 +31,14 @@ const Home_Projects = () => {
           Forex
         </motion.button>
       </Link>
-      <Link to="/project2">
+      <Link to="/stocks">
         <motion.button
           whileHover={{ scale: 1.1, transition: { duration: 0.5 } }}
         >
           Stocks
         </motion.button>
       </Link>
-      <Link to="/project3">
+      <Link to="/crypto">
         <motion.button
           whileHover={{ scale: 1.1, transition: { duration: 0.5 } }}
         >

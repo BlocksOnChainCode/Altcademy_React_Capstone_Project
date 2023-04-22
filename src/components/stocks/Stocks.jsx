@@ -6,10 +6,7 @@ const Stocks = () => {
   return (
     <div id="Stocks">
       <Navbar />
-      <h1>Portfolio</h1>
-      <Link to={"/"}>
-        <button>Home</button>
-      </Link>
+      <h1>Stocks</h1>
     </div>
   );
 };
