@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "./Forex.scss";
 import Pairs from "./Forex_Pairs";
 import Details from "./Forex_Details";
-import { getRates, getHistoricalRates } from "./api";
+import { getRates } from "./api";
 
 const Forex = () => {
   const [state, setState] = useState({
@@ -27,3 +27,5 @@ const Forex = () => {
 };
 
 export default Forex;
+
+// todo : Make the api call to get the historical rates for the selected pair.

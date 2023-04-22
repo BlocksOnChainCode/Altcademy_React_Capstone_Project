@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Navbar from "../Navbar";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import "./Forex_Details.scss";
+import ChartComponent from "./Forex_Chart";
+import Converter from "./Forex_Converter";
 
 const PairDetails = (props) => {
   const { state, setState } = props;
@@ -19,34 +21,6 @@ const PairDetails = (props) => {
   );
 };
 
-const LineChart = () => {
-  return (
-    <div>
-      <h1>Line Chart</h1>
-    </div>
-  );
-};
-
-const Converter = ({ state }) => {
-  const [amount, setAmount] = useState(1);
-
-  return (
-    <div>
-      <h1>Converter</h1>
-      <form>
-        <input
-          type="number"
-          value={amount}
-          onChange={(e) => setAmount(e.target.value)}
-        />
-        <input type="text" value={state.baseCurrency} readOnly />
-        <input type="text" value={state.quoteCurrency} readOnly />
-        <input type="number" value={amount * state.pairRate} readOnly />
-      </form>
-    </div>
-  );
-};
-
 const Details = (props) => {
   const { state, setState } = props;
 
@@ -54,8 +28,8 @@ const Details = (props) => {
     <div>
       <Navbar />
       <PairDetails state={state} />
-      <LineChart />
       <Converter state={state} />
+      <ChartComponent state={state} setState={setState} />
       <button onClick={() => setState({ ...state, pairDetails: false })}>
         Back
       </button>
