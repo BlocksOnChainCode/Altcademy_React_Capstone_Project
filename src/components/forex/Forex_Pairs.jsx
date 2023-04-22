@@ -12,6 +12,7 @@ const Pairs = (props) => {
       ...state,
       quoteCurrency: key,
       pairDetails: true,
+      pairRate: state.exchangeRates[key],
     });
   };
 
