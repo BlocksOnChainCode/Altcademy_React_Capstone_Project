@@ -2,35 +2,26 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import "./Finance_Forex.scss";
 import { Link } from "react-router-dom";
-import Navbar from "./Finance_Navbar";
+import Navbar from "../Navbar";
 import BaseCurrency from "./Finance_BaseCurrency";
 import { getRates, getHistoricalRates } from "./api";
 
-const ExchangeChart = (props) => {
+const LineChart = (props) => {
   const { state, setState } = props;
 
-  const handleClick = () => {
+  handleBack = () => {
     setState({
       ...state,
       pairDetails: false,
     });
   };
 
-  console.log(state);
   return (
-    <motion.div
-      initial={{ opacity: 0, x: -800 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 1, type: "spring", stiffness: 50 }}
-      id="exchangeChart"
-    >
-      <div className="chart" onClick={() => handleChartChange("line")}>
-        <h3>Line</h3>
-      </div>
-      <Link to="/finance">
-        <button onClick={handleClick}>Back</button>
-      </Link>
-    </motion.div>
+    <div>
+      <h1>Line Chart</h1>
+
+      <button onClick={handleBack}>Back</button>
+    </div>
   );
 };
 
@@ -72,13 +63,21 @@ const ExchangePair = (props) => {
   );
 };
 
-const Finance_Forex = (props) => {
-  const { state, setState } = props;
+const Forex = () => {
+  const [state, setState] = useState({
+    baseCurrency: "EUR",
+    quoteCurrency: "USD",
+    exchangeRates: [],
+    pairDetails: false,
+  });
+
+  useEffect(() => {
+    getRates(state, setState);
+  }, [state.baseCurrency, state.quoteCurrency]);
 
   let conditionalRender = null;
-
   if (state.pairDetails) {
-    conditionalRender = <ExchangeChart state={state} setState={setState} />;
+    conditionalRender = <LineChart state={state} setState={setState} />;
   } else {
     conditionalRender = <ExchangePair state={state} setState={setState} />;
   }
@@ -86,7 +85,4 @@ const Finance_Forex = (props) => {
   return <div id="ExchangeRates">{conditionalRender}</div>;
 };
 
-export default Finance_Forex;
-
-//todo: add a custom component for the table rows
-// ?: this will need access to the baseCurrency state from Finance.jsx
+export default Forex;

@@ -16,17 +16,6 @@ const Finance_Navbar = () => {
           <button>Home</button>
         </Link>
       </div>
-      <nav>
-        <Link to={"/finance"}>
-          <button>Forex</button>
-        </Link>
-        <Link to={"/finance/portfolio"}>
-          <button>Portfolio</button>
-        </Link>
-        <Link to={"/finance/crypto"}>
-          <button>Crypto</button>
-        </Link>
-      </nav>
     </motion.div>
   );
 };

@@ -1,4 +1,4 @@
-import Navbar from "./Finance_Navbar";
+import Navbar from "../Navbar";
 import "./Crypto.scss";
 
 const Crypto = () => {

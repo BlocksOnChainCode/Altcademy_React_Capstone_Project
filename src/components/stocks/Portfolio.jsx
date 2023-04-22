@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Navbar from "./Finance_Navbar";
+import Navbar from "../Navbar";
 import "./Portfolio.scss";
 
 const Portfolio = () => {
