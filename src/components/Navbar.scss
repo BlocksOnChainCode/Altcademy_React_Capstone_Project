@@ -5,9 +5,9 @@
   width: 100%;
   /*   border-bottom: 1px solid lightblue; */
   padding-bottom: 1rem;
-  .NavBarHeader {
+  .Header {
     @include flex(row, center, center);
-    width: 100%;
+    width: 90%;
     height: 50px;
     padding: 1rem;
     h1 {

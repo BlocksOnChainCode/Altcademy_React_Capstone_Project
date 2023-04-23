@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import "./Finance_BaseCurrency.scss";
+import "./Forex_BaseCurrency.scss";
 
 const BaseCurrency = (props) => {
   const { state, setState } = props;
@@ -60,3 +60,5 @@ const BaseCurrency = (props) => {
 };
 
 export default BaseCurrency;
+
+// todo : refactor SCSS ID's and classes to be more specific. Change filename to Forex_Pairs_BaseCurrency.jsx

@@ -1,6 +1,0 @@
-@import "/src/main.scss";
-
-#Crypto {
-  @include radial-gradient-dark($start-color, $end-color);
-  height: 100vh;
-}
