@@ -36,7 +36,7 @@ const ChartComponent = (props) => {
   }, [state.chartData]);
 
   /*   return (
-    <>
+ 
       <LineChart width={400} height={200} data={data}>
         <XAxis dataKey="date" />
         <YAxis domain={["dataMin - 1", "dataMax + 1"]} />
@@ -44,8 +44,8 @@ const ChartComponent = (props) => {
         <Tooltip />
         <Line type="monotone" dataKey="rate" stroke="green" />
       </LineChart>
-      <button onClick={getChartData}>get chartdata</button>
-    </>
+     
+   
   ); */
 };
 
