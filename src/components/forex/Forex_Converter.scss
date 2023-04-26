@@ -1,0 +1,25 @@
+@import "/src/main.scss";
+
+#Converter {
+  width: 100%;
+  @include flex(column, center, center);
+  form {
+    input {
+      width: 30%;
+      height: 40px;
+      border: 1px solid lightblue;
+      border-radius: 0.5rem;
+      box-shadow: 0 0 10px #ffffff;
+      padding: 0.25rem;
+      margin: 1rem;
+      font-size: 1rem;
+      color: lightblue;
+      background-color: transparent;
+    }
+    #conversionResult {
+      color: lightblue;
+      font-size: 1.5rem;
+      margin: 1rem;
+    }
+  }
+}

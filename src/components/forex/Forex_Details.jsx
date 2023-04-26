@@ -15,7 +15,7 @@ const PairDetails = (props) => {
         <h2>
           {state.baseCurrency} / {state.quoteCurrency}
         </h2>
-        <h2>{state.pairRate}</h2>
+        <h2>{state.pairRate.toFixed(3)}</h2>
       </div>
     </div>
   );
@@ -24,11 +24,15 @@ const PairDetails = (props) => {
 const Details = (props) => {
   const { state, setState } = props;
 
+  /*   useEffect(() => {
+    getRates(state, setState);
+  }, [state.baseCurrency, state.quoteCurrency]); */
+
   return (
     <div>
       <Navbar />
       <PairDetails state={state} />
-      <Converter state={state} />
+      <Converter state={state} setState={setState} />
       <ChartComponent state={state} setState={setState} />
       <button onClick={() => setState({ ...state, pairDetails: false })}>
         Back
