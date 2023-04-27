@@ -32,3 +32,5 @@ const Crypto = () => {
 };
 
 export default Crypto;
+
+//Todo : think what to do here.
