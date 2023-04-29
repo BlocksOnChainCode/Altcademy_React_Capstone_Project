@@ -24,6 +24,7 @@ const ChartComponent = (props) => {
             rate: data["Time Series FX (Daily)"][key]["4. close"],
           });
         }
+        chartData.reverse();
         setState({ ...state, chartData: chartData });
       });
   };
@@ -35,11 +36,13 @@ const ChartComponent = (props) => {
     console.log(state.chartData);
   }, [state.chartData]);
 
+  // Responsive chart width
   return (
     <div>
       <LineChart
         width={300}
-        height={300}
+        height={150}
+        id="chart"
         data={state.chartData}
         margin={{ top: 5, right: 20, bottom: 5, left: 0 }}
       >
@@ -50,6 +53,20 @@ const ChartComponent = (props) => {
         <Tooltip />
       </LineChart>
     </div>
+    // <div>
+    //   <LineChart
+    //     width={300}
+    //     height={150}
+    //     data={state.chartData}
+    //     margin={{ top: 5, right: 20, bottom: 5, left: 0 }}
+    //   >
+    //     <Line type="monotone" dataKey="rate" stroke="#8884d8" />
+    //     <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
+    //     <XAxis dataKey="date" />
+    //     <YAxis />
+    //     <Tooltip />
+    //   </LineChart>
+    // </div>
   );
 };
 

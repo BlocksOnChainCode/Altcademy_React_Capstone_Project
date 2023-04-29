@@ -12,24 +12,50 @@
   border-radius: 0.5rem;
   box-shadow: 0 0 5px #ffffff;
   margin: 1rem;
-
-  .rank {
-    border: 2px solid lightblue;
-    border-radius: 50%;
-    background-color: white;
-    color: black;
-    box-shadow: 0 0 5px #ffffff;
-    padding: 0.5rem;
-    align-self: center;
-    margin: -60px 0 0 -20px;
-  }
+  //@include flex(row, flex-start, center);
 
   .coin-left {
-    @include flex(row, space-around, center);
+    @include flex(row, space-between, center);
+    width: 95%;
+    padding: 0.5rem;
+    .coin-price {
+      color: lightblue;
+      font-size: 1.5rem;
+      margin: auto 0;
+    }
     img {
       width: 50px;
       height: 50px;
       margin: 1rem;
+    }
+  }
+  .coin-right {
+    @include flex(column, flex-start, flex-end);
+    width: 100%;
+    padding: 0.5rem;
+    .coin-price {
+      color: lightblue;
+      font-size: 2rem;
+    }
+  }
+  .coin-details {
+    @include flex(column, flex-start, center);
+    width: 100%;
+    padding: 0.5rem;
+    .coin-price {
+      color: lightblue;
+      font-size: 1.5rem;
+      margin: auto 0;
+    }
+    .coin-volume {
+      color: lightblue;
+      font-size: 1rem;
+      margin: auto 0;
+    }
+    .coin-marketcap {
+      color: lightblue;
+      font-size: 1rem;
+      margin: auto 0;
     }
   }
 }
