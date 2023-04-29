@@ -26,13 +26,13 @@ const Converter = (props) => {
 
   return (
     <div id="Converter">
+      <button onClick={handleChange}>Swap</button>
       <form>
         <input
           type="number"
           value={amount}
           onChange={(e) => setAmount(e.target.value)}
         />
-        <button onClick={handleChange}>Swap</button>
         <input
           id="conversionResult"
           type="number"

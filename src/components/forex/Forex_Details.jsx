@@ -10,7 +10,6 @@ const PairDetails = (props) => {
   const { state, setState } = props;
   return (
     <div id="PairDetails">
-      <h1>Pair Details</h1>
       <div className="pair">
         <h2>
           {state.baseCurrency} / {state.quoteCurrency}
@@ -34,7 +33,10 @@ const Details = (props) => {
       <PairDetails state={state} />
       <Converter state={state} setState={setState} />
       <ChartComponent state={state} setState={setState} />
-      <button onClick={() => setState({ ...state, pairDetails: false })}>
+      <button
+        id="back-btn"
+        onClick={() => setState({ ...state, pairDetails: false })}
+      >
         Back
       </button>
     </div>

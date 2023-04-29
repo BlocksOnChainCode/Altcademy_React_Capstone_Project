@@ -10,6 +10,7 @@ import {
 
 const ChartComponent = (props) => {
   const { state, setState } = props;
+  const [chartWidth, setChartWidth] = useState(300);
 
   const getChartData = () => {
     const apiKey = "S765H6N4CCK2VPCH";
@@ -31,16 +32,26 @@ const ChartComponent = (props) => {
 
   useEffect(() => {
     getChartData();
-  }, []);
+  }, [state.baseCurrency]);
   useEffect(() => {
     console.log(state.chartData);
   }, [state.chartData]);
-
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 500) {
+        setChartWidth(300);
+      } else {
+        setChartWidth(500);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   // Responsive chart width
   return (
-    <div>
+    <div id="chart-container">
       <LineChart
-        width={300}
+        width={chartWidth}
         height={150}
         id="chart"
         data={state.chartData}
@@ -53,20 +64,6 @@ const ChartComponent = (props) => {
         <Tooltip />
       </LineChart>
     </div>
-    // <div>
-    //   <LineChart
-    //     width={300}
-    //     height={150}
-    //     data={state.chartData}
-    //     margin={{ top: 5, right: 20, bottom: 5, left: 0 }}
-    //   >
-    //     <Line type="monotone" dataKey="rate" stroke="#8884d8" />
-    //     <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-    //     <XAxis dataKey="date" />
-    //     <YAxis />
-    //     <Tooltip />
-    //   </LineChart>
-    // </div>
   );
 };
 

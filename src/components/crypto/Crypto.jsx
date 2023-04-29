@@ -15,7 +15,12 @@ const Crypto = () => {
   }, []);
 
   return (
-    <div id="Crypto">
+    <motion.div
+      initial={{ opacity: 0, x: -100 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 1 }}
+      id="Crypto"
+    >
       <Navbar />
       <h1>Tap to expand!</h1>
       {coins.map((coin) => (
@@ -59,7 +64,7 @@ const Crypto = () => {
           )}
         </div>
       ))}
-    </div>
+    </motion.div>
   );
 };
 
