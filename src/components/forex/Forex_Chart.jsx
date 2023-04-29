@@ -35,18 +35,22 @@ const ChartComponent = (props) => {
     console.log(state.chartData);
   }, [state.chartData]);
 
-  /*   return (
- 
-      <LineChart width={400} height={200} data={data}>
+  return (
+    <div>
+      <LineChart
+        width={300}
+        height={300}
+        data={state.chartData}
+        margin={{ top: 5, right: 20, bottom: 5, left: 0 }}
+      >
+        <Line type="monotone" dataKey="rate" stroke="#8884d8" />
+        <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
         <XAxis dataKey="date" />
-        <YAxis domain={["dataMin - 1", "dataMax + 1"]} />
-        <CartesianGrid strokeDasharray="7 7" />
+        <YAxis />
         <Tooltip />
-        <Line type="monotone" dataKey="rate" stroke="green" />
       </LineChart>
-     
-   
-  ); */
+    </div>
+  );
 };
 
 export default ChartComponent;
