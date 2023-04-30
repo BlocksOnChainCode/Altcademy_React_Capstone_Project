@@ -39,22 +39,12 @@
     }
   }
   .coin-details {
-    @include flex(column, flex-start, center);
+    @include flex(column, flex-start, flex-start);
     width: 100%;
     padding: 0.5rem;
     .coin-price {
       color: lightblue;
       font-size: 1.5rem;
-      margin: auto 0;
-    }
-    .coin-volume {
-      color: lightblue;
-      font-size: 1rem;
-      margin: auto 0;
-    }
-    .coin-marketcap {
-      color: lightblue;
-      font-size: 1rem;
       margin: auto 0;
     }
   }

@@ -9,13 +9,13 @@ const Converter = (props) => {
   const handleChange = (e) => {
     e.preventDefault();
     const { baseCurrency, quoteCurrency } = state;
+    const temp = baseCurrency;
     setState({
       ...state,
       baseCurrency: quoteCurrency,
-      quoteCurrency: baseCurrency,
+      quoteCurrency: temp,
       pairRate: 1 / state.pairRate,
     });
-    getRates(state, setState);
   };
 
   useEffect(() => {

@@ -11,7 +11,7 @@ const Home_Header = () => {
       transition={{ duration: 1, type: "spring", stiffness: 50 }}
     >
       <h1>Altcademy</h1>
-      <h2>React Capstone Project</h2>
+      <h2>React Project</h2>
     </motion.div>
   );
 };
@@ -45,11 +45,11 @@ const Home_Projects = () => {
           Crypto
         </motion.button>
       </Link>
-      <Link to="/project4">
+      <Link to="/weather">
         <motion.button
           whileHover={{ scale: 1.1, transition: { duration: 0.5 } }}
         >
-          Project 4
+          Weather
         </motion.button>
       </Link>
       <Link to="/project5">

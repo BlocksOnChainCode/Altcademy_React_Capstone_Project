@@ -32,10 +32,9 @@ const ChartComponent = (props) => {
 
   useEffect(() => {
     getChartData();
-  }, [state.baseCurrency]);
-  useEffect(() => {
-    console.log(state.chartData);
-  }, [state.chartData]);
+  }, [state.baseCurrency, state.quoteCurrency]);
+
+  // Responsive chart width
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 500) {
@@ -47,7 +46,7 @@ const ChartComponent = (props) => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-  // Responsive chart width
+
   return (
     <div id="chart-container">
       <LineChart

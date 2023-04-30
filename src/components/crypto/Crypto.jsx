@@ -22,7 +22,6 @@ const Crypto = () => {
       id="Crypto"
     >
       <Navbar />
-      <h1>Tap to expand!</h1>
       {coins.map((coin) => (
         <div key={coin.id} className="coin" onClick={handleExpand}>
           <div className="coin-left">
@@ -38,27 +37,18 @@ const Crypto = () => {
               transition={{ duration: 1 }}
               className="coin-details"
             >
-              <div>
-                <p>Market Cap: {coin.market_cap}</p>
+              <div className="coin-price">
                 <p>Market Cap Rank: {coin.market_cap_rank}</p>
+                <p>Symbol: {coin.symbol}</p>
               </div>
-              <div>
-                <p>High 24h: {coin.high_24h}</p>
-                <p>Low 24h: {coin.low_24h}</p>
+              <div className="coin-price">
+                <p>High 24h: ${coin.high_24h}</p>
+                <p>Low 24h: ${coin.low_24h}</p>
               </div>
-              <div>
-                <p>Price Change 24h: {coin.price_change_24h}</p>
-                <p>
-                  Price Change Percentage 24h:{" "}
-                  {coin.price_change_percentage_24h}
-                </p>
-              </div>
-              <div>
-                <p>Market Cap Change 24h: {coin.market_cap_change_24h}</p>
-                <p>
-                  Market Cap Change Percentage 24h:{" "}
-                  {coin.market_cap_change_percentage_24h.toFixed(2)}
-                </p>
+              <div className="coin-price">
+                <p>Price Change 24h: </p>
+                <p>{coin.price_change_24h.toFixed(2)}$</p>
+                <p>{coin.price_change_percentage_24h.toFixed(2)}%</p>
               </div>
             </motion.div>
           )}
@@ -69,4 +59,3 @@ const Crypto = () => {
 };
 
 export default Crypto;
-//Todo : think what to do here.
