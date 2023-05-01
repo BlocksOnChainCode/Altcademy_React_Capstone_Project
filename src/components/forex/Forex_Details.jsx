@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import Navbar from "../Navbar";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import "./Forex_Details.scss";
 import ChartComponent from "./Forex_Chart";
 import Converter from "./Forex_Converter";
 
@@ -23,10 +22,6 @@ const PairDetails = (props) => {
 const Details = (props) => {
   const { state, setState } = props;
 
-  /*   useEffect(() => {
-    getRates(state, setState);
-  }, [state.baseCurrency, state.quoteCurrency]); */
-
   return (
     <div>
       <Navbar />
@@ -44,6 +39,3 @@ const Details = (props) => {
 };
 
 export default Details;
-
-// todo: Here will go 2 components, one for the chart and one for the converter.
-// todo: The chart will be a line chart, and the converter will be a form with 2 inputs, one for the base currency and one for the quote currency.

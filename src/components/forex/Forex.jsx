@@ -27,5 +27,3 @@ const Forex = () => {
 };
 
 export default Forex;
-
-// todo : Make the api call to get the historical rates for the selected pair.

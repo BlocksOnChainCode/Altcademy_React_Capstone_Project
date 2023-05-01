@@ -7,7 +7,13 @@ import "./Crypto.scss";
 const Expand = (props) => {
   const { coin } = props;
   return (
-    <div className="coin-details">
+    <motion.div
+      initial={{ opacity: 0, y: -100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, type: "spring", stiffness: 50 }}
+      exit={{ opacity: 0, y: -100 }}
+      className="coin-details"
+    >
       <h2>{coin.name}</h2>
       <h2 className="coin-price">$ {coin.current_price.toFixed(2)}</h2>
       <h2 className="coin-volume">$ {coin.total_volume.toLocaleString()}</h2>
@@ -15,7 +21,7 @@ const Expand = (props) => {
       <h2 className="coin-percent">
         {coin.price_change_percentage_24h.toFixed(2)}%
       </h2>
-    </div>
+    </motion.div>
   );
 };
 

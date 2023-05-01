@@ -1,8 +1,6 @@
 import { motion } from "framer-motion";
 import Navbar from "../Navbar";
 import BaseCurrency from "./Forex_BaseCurrency";
-import { useState } from "react";
-import "./Forex_Pairs.scss";
 
 const Pairs = (props) => {
   const { state, setState } = props;
@@ -44,5 +42,3 @@ const Pairs = (props) => {
 };
 
 export default Pairs;
-
-// todo: refactor SCSS ID's and classes to be more specific.

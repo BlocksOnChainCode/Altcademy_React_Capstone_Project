@@ -59,3 +59,59 @@
   color: black;
   background-color: lightblue;
 }
+
+#PairDetails {
+  @include flex(column, center, center);
+}
+
+#Converter {
+  width: 100%;
+  @include flex(column, center, center);
+  button {
+    width: 110px;
+    height: 40px;
+    border: 1px solid lightblue;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px #ffffff;
+    padding: 0.25rem;
+    margin: 1rem;
+    font-size: 1rem;
+    color: black;
+    background-color: lightblue;
+  }
+  form {
+    input {
+      width: 110px;
+      height: 40px;
+      border: 1px solid lightblue;
+      border-radius: 0.5rem;
+      box-shadow: 0 0 10px #ffffff;
+      padding: 0.25rem;
+      margin: 1rem;
+      font-size: 1rem;
+      color: lightblue;
+      background-color: transparent;
+    }
+    #conversionResult {
+      color: lightblue;
+      font-size: 1.5rem;
+      margin: 1rem;
+    }
+  }
+}
+
+#BaseCurrency {
+  @include flex(row, center, center);
+  select {
+    appearance: none;
+    width: 80%;
+    height: 40px;
+    font-size: 1rem;
+    padding: 0.25rem;
+    margin: 1rem;
+    color: black;
+    border: 2px solid lightblue;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px #ffffff;
+  }
+}

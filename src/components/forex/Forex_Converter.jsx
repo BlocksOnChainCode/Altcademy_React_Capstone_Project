@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "./Forex_Converter.scss";
 import { getRates } from "./api";
 
 const Converter = (props) => {
