@@ -31,13 +31,6 @@ const Home_Projects = () => {
           Forex
         </motion.button>
       </Link>
-      <Link to="/stocks">
-        <motion.button
-          whileHover={{ scale: 1.1, transition: { duration: 0.5 } }}
-        >
-          Stocks
-        </motion.button>
-      </Link>
       <Link to="/crypto">
         <motion.button
           whileHover={{ scale: 1.1, transition: { duration: 0.5 } }}
@@ -50,13 +43,6 @@ const Home_Projects = () => {
           whileHover={{ scale: 1.1, transition: { duration: 0.5 } }}
         >
           Weather
-        </motion.button>
-      </Link>
-      <Link to="/project5">
-        <motion.button
-          whileHover={{ scale: 1.1, transition: { duration: 0.5 } }}
-        >
-          Project 5...
         </motion.button>
       </Link>
     </motion.div>
